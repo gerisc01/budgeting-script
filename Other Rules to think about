@@ -1,0 +1,44 @@
+- If something has a monthly (or other consistent) small date spread and a big date spread between 55 and 75, check to see if it is normally a monthly event with a weird outlier or two
+
+- For stuff with a date spread < 30 with 2+ events per month, check to see if it is something that happens more frequently
+
+- Between 160 and 200, check for something that happens twice a year (Insurance)
+
+- Between 340 and 380, check for something that happens once a year (Annual Fee, Amazon Prime, etc)
+
+- Look into groups things together (Work lunch, Gas, etc.)
+    - But keep stuff like eating out for dinner each month separate
+
+- Try to group together liquor stores by looking for liquor in the description/terminal name?
+    - Allow to setup group name, keyword search, exceptions that should be added?
+
+- Seasonal Groups? (Twins parking)
+
+- Grocery/Home (Look for stuff that stays in the same general price range [something like under $200ish dollars?] and then catch outliers as their indv. purchases)
+
+
+
+
+Notes for creating recurring event list
+=======================================
+- Create distribution hash (events with the same name within $5 or 5% of each other)
+
+- Find the average date spread for a distribution
+    - Sort a distribution by date
+    - Grab the most recent 6 (or 7?) events
+    - Remove 1 or 2 outliers
+
+- See if the average date spread cleanly matches the transaction dates
+    - Outliers amount allowed -- outliers <= ((dates.size - 4)/3 + 1)
+    - Currently average spread needs to be between 14 and 380 days for a recurring event to be considered
+
+- Once a recurring transaction has been found, save the data for reference later
+    - is it current?
+    - is it monthly?
+    - if not, how often does it happen?
+    - name?
+    - amount?
+    - is it income?
+    - list of transactions
+    - start date
+    - end date
